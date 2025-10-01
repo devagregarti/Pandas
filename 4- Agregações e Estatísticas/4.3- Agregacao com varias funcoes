@@ -1,0 +1,16 @@
+Objetivo: Aplicar múltiplas métricas em uma ou mais colunas.
+
+📌 Conteúdo:
+	•	df.groupby('categoria')['valor'].agg(['mean', 'median', 'sum', 'count', 'std'])
+	•	Aplicar funções diferentes em colunas diferentes:
+
+
+df.groupby('categoria').agg({
+    'valor1': 'mean',
+    'valor2': 'sum',
+    'valor3': lambda x: x.max() - x.min()
+})
+
+
+💡 Dica prática:
+	•	Sempre nomeie colunas agregadas com agg() ou .rename() para facilitar leitura.
