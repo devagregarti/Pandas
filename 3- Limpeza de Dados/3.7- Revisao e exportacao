@@ -1,0 +1,12 @@
+Objetivo: Garantir que os dados estejam limpos e salvar para análises futuras.
+
+📌 Conteúdo:
+	•	Revisão geral: duplicatas, nulos, tipos de dados
+	•	Visualizar estatísticas finais: df.describe(), df.info()
+	•	Exportar dados limpos:
+	•	CSV: df.to_csv('arquivo_limpo.csv', index=False)
+	•	Excel: df.to_excel('arquivo_limpo.xlsx', index=False)
+
+💡 Dica prática:
+	•	Sempre salve uma cópia dos dados limpos, separada do original.
+	•	Crie funções de limpeza se for aplicar o mesmo processo em múltiplos datasets.
