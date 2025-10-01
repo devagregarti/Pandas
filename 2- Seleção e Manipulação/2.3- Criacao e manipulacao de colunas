@@ -1,0 +1,20 @@
+Objetivo: Alterar o DataFrame e gerar novas variáveis.
+
+📌 Conteúdo:
+	•	Criar nova coluna:
+	•	df['nova'] = ...
+	•	Usar operações entre colunas:
+	•	df['custo_total'] = df['preco'] * df['quantidade']
+	•	Usar apply para criar colunas:
+	•	df['faixa'] = df['idade'].apply(lambda x: 'jovem' if x < 30 else 'adulto')
+	•	Usar np.where:
+	•	df['categoria'] = np.where(df['idade'] > 18, 'adulto', 'menor')
+	•	Atualizar valores existentes.
+	•	Excluir colunas/linhas:
+	•	df.drop('coluna', axis=1)
+	•	df.drop([0,1], axis=0)
+
+👉 Exercício:
+	•	Crie uma coluna “idade_categoria” no Titanic (menor de 18 → criança, senão adulto).
+	•	Crie uma coluna “custo_por_ano” = fare / age.
+	•	Remova colunas desnecessárias (deck, embark_town).
