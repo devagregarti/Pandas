@@ -1,0 +1,3 @@
+	Tratar valores ausentes (isna, fillna, dropna).
+	•	Tratar duplicatas (drop_duplicates).
+	•	Alterar tipos de dados (astype).
