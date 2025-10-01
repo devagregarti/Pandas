@@ -1,0 +1,16 @@
+Objetivo: Consolidar tudo com exemplos reais.
+
+📌 Conteúdo:
+	•	Escolha um dataset do Kaggle (Titanic, Sales, Iris)
+	•	Aplicar:
+	1.	Estatísticas básicas
+	2.	Agrupamento (groupby)
+	3.	Pivot table
+	4.	Rolling stats (se aplicável)
+	•	Comparar resultados, detectar insights
+	•	Exportar resultados agregados:
+	•	df.to_csv('agregados.csv', index=False)
+
+💡 Dica prática:
+	•	Documente cada passo para criar scripts reutilizáveis.
+	•	Visualize dados agregados com matplotlib ou seaborn para insights rápidos.
