@@ -1,0 +1,5 @@
+Renomear colunas (rename).
+	•	Filtrar dados com condições (df[df['coluna'] > 10]).
+	•	Ordenação (sort_values, sort_index).
+	•	Criação e modificação de colunas (df['nova'] = ...).
+	•	Remover colunas/linhas (drop).
