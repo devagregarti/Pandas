@@ -1,0 +1,17 @@
+Objetivo: Lidar com dados faltantes de forma inteligente.
+
+📌 Conteúdo:
+	•	Detectar: df.isna(), df.isnull()
+	•	Remover linhas ou colunas:
+	•	df.dropna(axis=0) (linhas)
+	•	df.dropna(axis=1) (colunas)
+	•	Substituir valores ausentes:
+	•	df.fillna(0)
+	•	df['coluna'].fillna(df['coluna'].mean())
+	•	df['coluna'].fillna(df['coluna'].mode()[0])
+	•	Estratégias avançadas: interpolação, forward-fill, backward-fill
+	•	df['coluna'].ffill(), df['coluna'].bfill()
+
+💡 Dica prática:
+	•	Para colunas numéricas use média/mediana, para categóricas use moda.
+	•	Nunca apenas delete sem analisar o impacto nos dados.
