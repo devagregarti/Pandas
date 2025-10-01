@@ -1,0 +1,4 @@
+•	Métodos iniciais: .head(), .tail(), .info(), .describe(), .shape, .dtypes.
+	•	Seleção de colunas e linhas:
+	•	df['coluna'], df[['col1', 'col2']]
+	•	.loc[] e .iloc[]
