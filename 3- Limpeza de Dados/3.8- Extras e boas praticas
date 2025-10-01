@@ -1,0 +1,4 @@
+•	Sempre explore o dataset antes de limpar.
+	•	Documente cada passo em Jupyter Notebook ou Markdown.
+	•	Use bibliotecas como seaborn e matplotlib para identificar padrões estranhos visualmente.
+	•	Para datasets muito grandes, considere o dask ou modin para acelerar o processamento.
