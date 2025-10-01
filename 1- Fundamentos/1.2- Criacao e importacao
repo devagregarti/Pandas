@@ -1,0 +1,4 @@
+Criar DataFrames e Series a partir de listas, dicionários e arrays.
+	•	Importar dados de arquivos:
+	•	read_csv, read_excel, read_json, read_sql.
+	•	Exportar dados (to_csv, to_excel, etc.).
