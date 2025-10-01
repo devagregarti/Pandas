@@ -1,0 +1,3 @@
+•	Conversão de colunas para datetime (pd.to_datetime).
+	•	Extração de partes da data (dt.year, dt.month, dt.day).
+	•	Operações com datas (diferenças, filtragem por intervalo).
