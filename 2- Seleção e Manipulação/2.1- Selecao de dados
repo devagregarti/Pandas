@@ -1,0 +1,19 @@
+Objetivo: Aprender a acessar colunas, linhas e subconjuntos.
+
+📌 Conteúdo para estudar e praticar:
+	•	Seleção de colunas:
+	•	df['coluna'], df[['col1', 'col2']]
+	•	Seleção de linhas pelo índice:
+	•	df.loc[linha], df.iloc[posição]
+	•	Seleção mista (linhas + colunas):
+	•	df.loc[0:5, ['col1','col2']]
+	•	df.iloc[0:5, 0:2]
+	•	Seleção condicional simples:
+	•	df[df['idade'] > 30]
+	•	Seleção condicional composta (and/or):
+	•	df[(df['idade'] > 30) & (df['sexo'] == 'M')]
+
+👉 Exercício prático:
+	•	Carregue o dataset Titanic (seaborn.load_dataset('titanic')).
+	•	Selecione apenas as colunas sex, age e fare.
+	•	Filtre passageiros com idade > 18 e sex == 'female'.
