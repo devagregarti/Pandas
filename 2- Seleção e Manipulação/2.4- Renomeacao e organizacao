@@ -1,0 +1,17 @@
+Objetivo: Deixar os dados mais organizados.
+
+📌 Conteúdo:
+	•	Renomear colunas:
+	•	df.rename(columns={'old':'new'}, inplace=True)
+	•	Reorganizar colunas:
+	•	df = df[['col2', 'col1', 'col3']]
+	•	Resetar índice:
+	•	df.reset_index(drop=True)
+	•	Definir índice:
+	•	df.set_index('coluna')
+	•	Trabalhar com inplace=True vs atribuição.
+
+👉 Exercício:
+	•	Renomeie as colunas do Titanic para português (sex → sexo, age → idade, etc).
+	•	Reordene o DataFrame para que sexo e idade fiquem no início.
+	•	Defina a coluna pclass como índice.
