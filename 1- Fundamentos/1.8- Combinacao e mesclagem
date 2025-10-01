@@ -1,0 +1,3 @@
+	Concatenar (concat).
+	•	Juntar DataFrames (merge, join).
+	•	pd.concat vs pd.merge.
