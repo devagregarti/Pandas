@@ -1,0 +1,3 @@
+•	Diferença entre operações vetorizadas vs loops.
+	•	Trabalhar com grandes datasets (chunksize, dtypes otimizados).
+	•	Noções de integração com NumPy.
