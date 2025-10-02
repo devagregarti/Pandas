@@ -1,0 +1,62 @@
+📌 Objetivo:
+Criar um painel analítico com insights sobre filmes, como popularidade, receita, gênero e avaliação, usando um dataset público (ex: IMDb ou TMDb).
+
+🧱 Estrutura do Projeto:
+🔹 1. Ingestão de Dados
+
+Dataset com colunas como:
+
+title, release_date, genre, rating, revenue, budget, runtime
+
+
+Fonte sugerida: Kaggle - TMDb Movies Dataset
+
+🔹 2. Limpeza e Preparação
+
+Conversão de datas com pd.to_datetime()
+Tratamento de valores nulos
+Criação de colunas derivadas:
+
+Lucro: revenue - budget
+Ano de lançamento: .dt.year
+
+
+
+🔹 3. Análise Exploratória
+
+Filmes com maior lucro
+Distribuição de gêneros
+Evolução da receita ao longo dos anos
+Correlação entre orçamento e receita
+
+🔹 4. Visualizações
+
+Gráfico de barras dos gêneros mais lucrativos
+Linha do tempo da receita média por ano
+Scatter plot: orçamento vs receita
+Histograma de avaliações
+
+🔹 5. Insights e Conclusões
+
+Quais gêneros são mais rentáveis?
+Existe relação entre orçamento e sucesso?
+Tendência de avaliação ao longo dos anos?
+
+
+🛠️ Ferramentas e Técnicas
+
+pandas, matplotlib, seaborn
+groupby(), pivot_table(), query()
+plot(), barplot(), scatterplot()
+
+
+📦 Entrega Esperada
+
+Jupyter Notebook com:
+
+Código limpo e comentado
+Visualizações
+Conclusões escritas
+
+
+Pode ser usado como base para dashboards interativos com Streamlit ou Plotly
