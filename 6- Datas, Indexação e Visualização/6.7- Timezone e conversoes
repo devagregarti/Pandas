@@ -1,0 +1,10 @@
+Objetivo: Trabalhar com fusos horários.
+
+Tópicos:
+
+.tz_localize(), .tz_convert()
+Ajustes entre UTC e fusos locais
+
+
+df.index = df.index.tz_localize('UTC').tz_convert('Europe/Dublin')
+
