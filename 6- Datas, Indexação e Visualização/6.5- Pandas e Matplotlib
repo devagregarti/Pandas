@@ -1,0 +1,16 @@
+Objetivo: Criar gráficos diretamente com pandas.
+
+Tópicos:
+
+.plot() para séries temporais
+Tipos de gráficos: linha, barra, área
+Personalização com matplotlib
+
+
+import matplotlib.pyplot as plt
+
+df['valor'].plot(title='Evolução dos Valores')
+plt.xlabel('Data')
+plt.ylabel('Valor')
+plt.show()
+
