@@ -1,0 +1,13 @@
+Objetivo: Criar uma visualização integrada.
+
+Tópicos:
+
+Subplots
+Gráficos combinados
+
+
+fig, ax = plt.subplots(2, 1, figsize=(10, 6))
+df['valor'].plot(ax=ax[0], title='Valor ao longo do tempo')
+df['media_movel'].plot(ax=ax[1], title='Média Móvel')
+plt.tight_layout()
+plt.show()
