@@ -1,0 +1,10 @@
+Objetivo: Aplicar cálculos em janelas móveis temporais.
+
+Tópicos:
+
+rolling(window=...)
+Média móvel, soma móvel, etc.
+
+
+df['media_movel'] = df['valor'].rolling(window=3).mean()
+
