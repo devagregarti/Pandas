@@ -1,0 +1,10 @@
+Objetivo: Agrupar dados e aplicar agregações ou transformações.
+
+Tópicos:
+
+groupby() + agg()
+transform() vs apply()
+
+
+df = pd.DataFrame({'grupo': ['A', 'A', 'B'], 'valor': [10, 20, 30]})
+df['media_grupo'] = df.groupby('grupo')['valor'].transform('mean')
