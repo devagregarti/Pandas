@@ -1,0 +1,9 @@
+Objetivo: Selecionar e organizar dados.
+
+Tópicos:
+
+sort_values()
+Filtros com condições booleanas
+
+df_filtrado = df[df['idade'] > 25].sort_values(by='idade', ascending=False)
+
