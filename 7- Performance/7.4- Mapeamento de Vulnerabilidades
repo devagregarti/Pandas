@@ -1,0 +1,7 @@
+Objetivo: Identificar gargalos e riscos.
+
+Exemplos de vulnerabilidades:
+
+Dados duplicados ou inconsistentes
+Operações lentas em grandes volumes
+Falta de tratamento de valores nulos
