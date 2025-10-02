@@ -1,0 +1,15 @@
+Objetivo: Entender os conceitos de junção de dados (similar ao SQL).
+
+Tópicos:
+
+merge()
+join()
+concat()
+Tipos de junção: inner, outer, left, right
+
+import pandas as pd
+
+df1 = pd.DataFrame({'id': [1, 2], 'nome': ['Ana', 'Bruno']})
+df2 = pd.DataFrame({'id': [1, 2], 'idade': [23, 35]})
+
+df_merged = pd.merge(df1, df2, on='id', how='inner')
