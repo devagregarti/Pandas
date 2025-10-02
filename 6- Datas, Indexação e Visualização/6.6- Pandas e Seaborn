@@ -1,0 +1,12 @@
+Objetivo: Criar gráficos mais sofisticados.
+
+Tópicos:
+
+seaborn.lineplot(), seaborn.barplot()
+Gráficos com agrupamento por data
+
+
+import seaborn as sns
+
+sns.lineplot(data=df, x='data', y='valor')
+
