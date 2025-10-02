@@ -1,0 +1,11 @@
+Objetivo: Usar datas como índice para facilitar análises temporais.
+
+Tópicos:
+
+set_index() com colunas de data
+Indexação por intervalo de datas
+Frequência de datas (freq='D', 'M', 'Y')
+
+
+df = df.set_index('data')
+df.loc['2025-01-01':'2025-01-31']
