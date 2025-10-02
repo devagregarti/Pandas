@@ -1,0 +1,11 @@
+Objetivo: Entender como lidar com datas e tempos.
+
+Tópicos:
+
+pd.to_datetime()
+Extração de partes da data (.dt.year, .dt.month, etc.)
+Criação de ranges de datas: pd.date_range()
+
+df = pd.DataFrame({'data': ['2025-01-01', '2025-02-15']})
+df['data'] = pd.to_datetime(df['data'])
+df['mes'] = df['data'].dt.month
