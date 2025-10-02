@@ -1,0 +1,12 @@
+Objetivo: Reestruturar DataFrames para análise.
+
+Tópicos:
+
+pivot(), pivot_table()
+melt() para transformar colunas em linhas
+
+
+df = pd.DataFrame({'ano': [2020, 2021], 'vendas': [100, 150]})
+df_melted = pd.melt(df, id_vars=['ano'], value_vars=['vendas'])
+
+
