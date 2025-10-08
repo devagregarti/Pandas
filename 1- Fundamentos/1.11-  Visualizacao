@@ -1,3 +1,9 @@
 •	Uso do .plot() com matplotlib.
 	•	Gráficos rápidos: linha, barras, histograma.
 
+df['coluna']                 # Seleciona uma coluna
+df[['col1', 'col2']]         # Seleciona múltiplas colunas
+df.iloc[0]                   # Seleciona pela posição (linha)
+df.loc[0]                    # Seleciona pelo índice
+df.loc[df['idade'] > 30]     # Filtra por condição
+df.query('idade > 30')       # Filtra usando expressão
