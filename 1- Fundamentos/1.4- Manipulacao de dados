@@ -3,3 +3,13 @@ Renomear colunas (rename).
 	•	Ordenação (sort_values, sort_index).
 	•	Criação e modificação de colunas (df['nova'] = ...).
 	•	Remover colunas/linhas (drop).
+
+
+df['nova_coluna'] = df['idade'] * 2     # Cria nova coluna
+df.rename(columns={'idade': 'anos'})     # Renomeia coluna
+df.drop('coluna', axis=1)                # Remove coluna
+df.dropna()                              # Remove linhas com valores nulos
+df.fillna(0)                             # Substitui nulos por 0
+df.replace('valor_antigo', 'novo_valor') # Substitui valores
+df.sort_values(by='idade', ascending=False) # Ordena por coluna
+df.reset_index(drop=True)                # Reseta o índice
