@@ -1,13 +1,3 @@
 •	Uso do .plot() com matplotlib.
 	•	Gráficos rápidos: linha, barras, histograma.
 
-
-
-df.head()          # Mostra as 5 primeiras linhas
-df.tail()          # Mostra as 5 últimas linhas
-df.info()          # Mostra informações gerais (colunas, tipos, memória)
-df.describe()      # Estatísticas descritivas
-df.shape           # Retorna (linhas, colunas)
-df.columns         # Lista de colunas
-df.dtypes          # Tipos de dados
-df.index           # Índices do DataFrame
