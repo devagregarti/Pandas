@@ -13,3 +13,9 @@ df.fillna(0)                             # Substitui nulos por 0
 df.replace('valor_antigo', 'novo_valor') # Substitui valores
 df.sort_values(by='idade', ascending=False) # Ordena por coluna
 df.reset_index(drop=True)                # Reseta o índice
+
+df.apply(lambda x: x*2)                   # Aplica função em todas as colunas
+df['coluna'].apply(lambda x: x.upper())   # Aplica função a uma coluna
+df['coluna'].map({'A':1, 'B':2})          # Mapeia valores
+df.drop_duplicates()                      # Remove duplicados
+df.sample(5)                              # Amostra aleatória de 5 linhas
