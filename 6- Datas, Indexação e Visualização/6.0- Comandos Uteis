@@ -1,0 +1,4 @@
+pd.to_datetime(df['data'])                # Converte para datetime
+df['ano'] = df['data'].dt.year            # Extrai o ano
+df['mes'] = df['data'].dt.month           # Extrai o mês
+df['dia'] = df['data'].dt.day             # Extrai o dia
