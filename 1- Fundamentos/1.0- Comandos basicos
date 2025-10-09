@@ -1,0 +1,76 @@
+ 1. Importar e visualizar dados
+
+import pandas as pd
+
+df = pd.read_csv('arquivo.csv')   # ou .xlsx, .json, etc.
+df.head()        # mostra as 5 primeiras linhas
+df.tail()        # mostra as 5 últimas linhas
+df.sample(5)     # mostra 5 linhas aleatórias
+df.shape         # mostra (linhas, colunas)
+df.columns       # mostra os nomes das colunas
+df.info()        # resumo do dataframe (tipos e valores nulos)
+df.dtypes        # tipos de dados de cada coluna
+
+2. Estatísticas descritivas
+
+df.describe()                  # estatísticas numéricas (média, desvio padrão, etc.)
+df.describe(include='all')     # inclui colunas categóricas
+df['coluna'].value_counts()    # contagem de valores únicos
+df['coluna'].unique()          # lista de valores únicos
+df['coluna'].nunique()         # número de valores únicos
+df.mean(numeric_only=True)     # média das colunas numéricas
+df.median(numeric_only=True)   # mediana
+df.std(numeric_only=True)      # desvio padrão
+
+3. Verificação e tratamento de dados ausentes
+
+df.isnull().sum()        # total de valores nulos por coluna
+df.notnull().sum()       # total de valores não nulos
+df.dropna()              # remove linhas com valores nulos
+df.fillna(0)             # substitui nulos por 0
+
+4. Estrutura e tipos de dados
+
+df.select_dtypes(include='number')  # apenas colunas numéricas
+df.select_dtypes(exclude='number')  # apenas colunas não numéricas
+df['coluna'] = df['coluna'].astype(float)  # converte tipo de dados
+
+
+5. Ordenação e filtragem
+
+df.sort_values('coluna')                 # ordena por uma coluna
+df.sort_values(['col1', 'col2'], ascending=[True, False])
+df[df['coluna'] > 100]                   # filtra por condição
+df[(df['idade'] > 30) & (df['sexo'] == 'M')]
+
+6. Agrupamento e agregações
+
+df.groupby('coluna').mean(numeric_only=True)
+df.groupby('categoria')['valor'].sum()
+df.groupby(['coluna1', 'coluna2']).agg({'valor':'mean'})
+
+
+7. Correlações e análise rápida
+
+df.corr(numeric_only=True)         # matriz de correlação
+df.cov(numeric_only=True)          # matriz de covariância
+df['coluna'].plot(kind='hist')     # histograma (rápido e 
+
+8. Renomear, selecionar e reorganizar colunas
+
+df.rename(columns={'old': 'new'}, inplace=True)
+df[['col1', 'col2']]               # seleciona colunas específicas
+df.drop('coluna', axis=1, inplace=True)   # remove uma coluna
+df.reindex(sorted(df.columns), axis=1)    # reordena colunas
+
+9. Resumo geral rápido (ótimo para início)
+
+df.info()
+df.describe()
+df.head()
+df.isnull().sum()
+df.nunique()
+
+
+
+
