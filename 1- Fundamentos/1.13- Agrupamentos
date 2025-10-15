@@ -1,0 +1,168 @@
+🧩 AGRUPAMENTO DE DADOS NO PANDAS (GROUPBY)
+
+Agrupar significa juntar linhas que têm algo em comum (por exemplo, mesma cidade, categoria ou vendedor) e calcular algum tipo de resumo (como média, soma, contagem, etc.). No Pandas isso é feito com o método df.groupby().
+
+⸻
+
+📘 1. Estrutura básica
+
+Sintaxe geral:
+df.groupby(“coluna_chave”)[“coluna_valor”].função()
+	•	“coluna_chave” → define o grupo (ex: cidade, categoria)
+	•	“coluna_valor” → campo numérico (ex: vendas, idade)
+	•	função() → operação como mean(), sum(), count(), max(), min()
+
+⸻
+
+🧱 2. Exemplo prático
+
+import pandas as pd
+df = pd.DataFrame({
+“Cidade”: [“São Paulo”, “Rio”, “São Paulo”, “Curitiba”, “Rio”, “Curitiba”],
+“Vendedor”: [“Ana”, “Bruno”, “Carlos”, “Ana”, “Bruno”, “Carlos”],
+“Vendas”: [1000, 800, 1200, 700, 900, 600]
+})
+
+Tabela original:
+Cidade | Vendedor | Vendas
+São Paulo | Ana | 1000
+Rio | Bruno | 800
+São Paulo | Carlos | 1200
+Curitiba | Ana | 700
+Rio | Bruno | 900
+Curitiba | Carlos | 600
+
+⸻
+
+🔹 3. Agrupando por uma coluna
+
+Média de vendas por cidade:
+df.groupby(“Cidade”)[“Vendas”].mean()
+
+Resultado:
+Curitiba 650.0
+Rio 850.0
+São Paulo 1100.0
+
+⸻
+
+🔹 4. Agrupando e somando
+
+Soma de vendas por cidade:
+df.groupby(“Cidade”)[“Vendas”].sum()
+
+Resultado:
+Curitiba 1300
+Rio 1700
+São Paulo 2200
+
+⸻
+
+🔹 5. Agrupar por mais de uma coluna
+
+df.groupby([“Cidade”, “Vendedor”])[“Vendas”].sum()
+
+Resultado:
+Curitiba - Ana: 700
+Curitiba - Carlos: 600
+Rio - Bruno: 1700
+São Paulo - Ana: 1000
+São Paulo - Carlos: 1200
+
+⸻
+
+🔹 6. Resetando o índice
+
+Para voltar o agrupamento ao formato normal de tabela:
+df.groupby(“Cidade”)[“Vendas”].sum().reset_index()
+
+Resultado:
+Cidade | Vendas
+Curitiba | 1300
+Rio | 1700
+São Paulo | 2200
+
+⸻
+
+🔹 7. Múltiplas funções com agg()
+
+df.groupby(“Cidade”)[“Vendas”].agg([“mean”, “sum”, “max”, “min”])
+
+Resultado:
+Cidade | mean | sum | max | min
+Curitiba | 650.0 | 1300 | 700 | 600
+Rio | 850.0 | 1700 | 900 | 800
+São Paulo | 1100.0 | 2200 | 1200 | 1000
+
+⸻
+
+🔹 8. Funções diferentes em várias colunas
+
+df.groupby(“Cidade”).agg({“Vendas”: [“sum”, “mean”], “Vendedor”: “count”})
+
+Resultado:
+Cidade | Vendas_sum | Vendas_mean | Vendedor_count
+Curitiba | 1300 | 650 | 2
+Rio | 1700 | 850 | 2
+São Paulo | 2200 | 1100 | 2
+
+⸻
+
+🔹 9. Ordenando o resultado
+
+df.groupby(“Cidade”)[“Vendas”].sum().sort_values(ascending=False)
+
+Resultado:
+São Paulo 2200
+Rio 1700
+Curitiba 1300
+
+⸻
+
+🔹 10. Nomeando colunas após agrupamento
+
+agrupado = df.groupby(“Cidade”)[“Vendas”].sum().reset_index()
+agrupado.columns = [“Cidade”, “Total_Vendas”]
+
+Resultado:
+Cidade | Total_Vendas
+Curitiba | 1300
+Rio | 1700
+São Paulo | 2200
+
+⸻
+
+🔹 11. Contando registros por grupo
+
+df.groupby(“Cidade”)[“Vendas”].count()
+
+Resultado:
+Curitiba 2
+Rio 2
+São Paulo 2
+
+⸻
+
+🔹 12. Aplicando funções personalizadas
+
+def faixa(valor):
+return “Alta” if valor.mean() > 900 else “Baixa”
+df.groupby(“Cidade”)[“Vendas”].apply(faixa)
+
+Resultado:
+Curitiba Baixa
+Rio Baixa
+São Paulo Alta
+
+⸻
+
+🧭 13. Resumo rápido
+
+Ação | Exemplo | Descrição
+Média por grupo | df.groupby(“Cidade”)[“Vendas”].mean() | Média das vendas por cidade
+Soma por grupo | df.groupby(“Cidade”)[“Vendas”].sum() | Soma total
+Várias funções | df.groupby(“Cidade”)[“Vendas”].agg([“mean”,“sum”]) | Média e soma
+Agrupar por várias colunas | df.groupby([“Cidade”,“Vendedor”])[“Vendas”].sum() | Agrupamento duplo
+Resetar índice | .reset_index() | Volta ao formato de tabela
+Ordenar resultado | .sort_values(ascending=False) | Organiza do maior ao menor
+Funções diferentes em várias colunas | df.groupby(“Cidade”).agg({“Vendas”:[“sum”,“mean”],“Vendedor”:“count”}) | Estatísticas variadas
