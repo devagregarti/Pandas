@@ -1,0 +1,211 @@
+📘 1. Diferença geral entre as funções
+	•	merge() → combina DataFrames com base em colunas (igual ao SQL JOIN).
+	•	join() → combina DataFrames com base nos índices (semelhante ao merge, mas mais simples).
+	•	concat() → empilha DataFrames (um abaixo ou ao lado do outro).
+	•	append() → adiciona linhas no final de outro DataFrame (forma antiga do concat).
+
+⸻
+
+🧱 2. Exemplo de DataFrames base
+
+import pandas as pd
+clientes = pd.DataFrame({
+“id”: [1, 2, 3],
+“nome”: [“Ana”, “Bruno”, “Carlos”]
+})
+
+vendas = pd.DataFrame({
+“id_cliente”: [1, 2, 2, 4],
+“valor”: [500, 700, 200, 300]
+})
+
+⸻
+
+🔹 3. MERGE — junção por colunas
+
+O merge() funciona como os comandos JOIN do SQL.
+
+⸻
+
+🔸 INNER JOIN (somente correspondentes)
+
+pd.merge(clientes, vendas, left_on=“id”, right_on=“id_cliente”, how=“inner”)
+
+Resultado:
+id | nome | id_cliente | valor
+1 | Ana | 1 | 500
+2 | Bruno | 2 | 700
+2 | Bruno | 2 | 200
+
+➡️ Apenas linhas com correspondência em ambas as tabelas.
+
+⸻
+
+🔸 LEFT JOIN (mantém todos os da esquerda)
+
+pd.merge(clientes, vendas, left_on=“id”, right_on=“id_cliente”, how=“left”)
+
+Resultado:
+id | nome | id_cliente | valor
+1 | Ana | 1 | 500
+2 | Bruno | 2 | 700
+2 | Bruno | 2 | 200
+3 | Carlos | NaN | NaN
+
+➡️ Mantém todos os clientes, mesmo que não tenham venda.
+
+⸻
+
+🔸 RIGHT JOIN (mantém todos os da direita)
+
+pd.merge(clientes, vendas, left_on=“id”, right_on=“id_cliente”, how=“right”)
+
+Resultado:
+id | nome | id_cliente | valor
+1 | Ana | 1 | 500
+2 | Bruno | 2 | 700
+2 | Bruno | 2 | 200
+NaN | NaN | 4 | 300
+
+➡️ Mantém todas as vendas, mesmo que não tenham cliente correspondente.
+
+⸻
+
+🔸 OUTER JOIN (todos os registros)
+
+pd.merge(clientes, vendas, left_on=“id”, right_on=“id_cliente”, how=“outer”)
+
+Resultado:
+id | nome | id_cliente | valor
+1 | Ana | 1 | 500
+2 | Bruno | 2 | 700
+2 | Bruno | 2 | 200
+3 | Carlos | NaN | NaN
+NaN | NaN | 4 | 300
+
+➡️ Junta tudo, preenchendo com NaN onde não há correspondência.
+
+⸻
+
+🔹 4. JOIN — junção por índices
+
+O join() usa o índice de cada DataFrame para unir.
+
+Exemplo:
+clientes = clientes.set_index(“id”)
+vendas = vendas.set_index(“id_cliente”)
+clientes.join(vendas, how=“left”)
+
+Resultado:
+id | nome | valor
+1 | Ana | 500
+2 | Bruno | 700
+2 | Bruno | 200
+3 | Carlos | NaN
+
+➡️ Aqui, o join usa o índice como chave, sem precisar indicar colunas.
+
+⸻
+
+🔹 5. CONCAT — empilhar DataFrames
+
+O concat() é usado para juntar DataFrames um embaixo do outro (linhas) ou lado a lado (colunas).
+
+⸻
+
+🔸 Empilhar verticalmente (linhas)
+
+df1 = pd.DataFrame({“A”: [1, 2], “B”: [3, 4]})
+df2 = pd.DataFrame({“A”: [5, 6], “B”: [7, 8]})
+pd.concat([df1, df2])
+
+Resultado:
+A | B
+1 | 3
+2 | 4
+5 | 7
+6 | 8
+
+⸻
+
+🔸 Juntar horizontalmente (colunas)
+
+pd.concat([df1, df2], axis=1)
+
+Resultado:
+A | B | A | B
+1 | 3 | 5 | 7
+2 | 4 | 6 | 8
+
+⸻
+
+🔸 Resetar índice após concat
+
+pd.concat([df1, df2], ignore_index=True)
+
+Resultado:
+A | B
+1 | 3
+2 | 4
+5 | 7
+6 | 8
+
+➡️ O parâmetro ignore_index=True reinicia a numeração das linhas.
+
+⸻
+
+🔹 6. APPEND — adicionar linhas (forma antiga)
+
+df1.append(df2, ignore_index=True)
+
+Resultado:
+A | B
+1 | 3
+2 | 4
+5 | 7
+6 | 8
+
+⚠️ Observação: append() é uma forma mais antiga e foi substituída por concat() nas versões mais recentes do Pandas.
+
+⸻
+
+🔹 7. Concatenando DataFrames com colunas diferentes
+
+df3 = pd.DataFrame({“A”: [9, 10], “C”: [11, 12]})
+pd.concat([df1, df3], ignore_index=True)
+
+Resultado:
+A | B | C
+1 | 3 | NaN
+2 | 4 | NaN
+9 | NaN | 11
+10 | NaN | 12
+
+➡️ O Pandas preenche com NaN onde não há correspondência de colunas.
+
+⸻
+
+🔹 8. Identificando a origem dos dados com “keys”
+
+pd.concat([df1, df2], keys=[“Primeiro”, “Segundo”])
+
+Resultado:
+Primeiro - A: 1 2
+Primeiro - B: 3 4
+Segundo - A: 5 6
+Segundo - B: 7 8
+
+➡️ Cria um índice hierárquico indicando de qual DataFrame veio cada linha.
+
+⸻
+
+🧭 9. Resumo rápido
+
+Ação | Função | Descrição
+Combinar tabelas por coluna | pd.merge() | Igual ao SQL JOIN
+Combinar por índice | df.join() | Usa o índice como chave
+Empilhar tabelas (linhas) | pd.concat([df1, df2]) | Junta uma abaixo da outra
+Juntar tabelas lado a lado | pd.concat([…], axis=1) | Une por colunas
+Adicionar linhas (antigo) | df1.append(df2) | Forma antiga de concat
+Manter todos os dados | how=“outer” | Preenche com NaN onde faltar
+Manter só correspondentes | how=“inner” | Junta apenas onde há chave igual
