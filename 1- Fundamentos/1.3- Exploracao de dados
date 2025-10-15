@@ -1,14 +1,186 @@
-•	Métodos iniciais: .head(), .tail(), .info(), .describe(), .shape, .dtypes.
-	•	Seleção de colunas e linhas:
-	•	df['coluna'], df[['col1', 'col2']]
-	•	.loc[] e .iloc[]
-df.head()          # Mostra as 5 primeiras linhas
-df.tail()          # Mostra as 5 últimas linhas
-df.info()          # Mostra informações gerais (colunas, tipos, memória)
-df.describe()      # Estatísticas descritivas
-df.shape           # Retorna (linhas, colunas)
-df.columns         # Lista de colunas
-df.dtypes          # Tipos de dados
-df.index           # Índices do DataFrame
+🔍 Exploração de Dados com Pandas
+
+A exploração de dados serve para entender a estrutura, o conteúdo e a qualidade do DataFrame antes de fazer qualquer análise ou transformação.
+É uma das partes mais importantes do trabalho com dados.
+
+⸻
+
+📘 1. Ver as Primeiras e Últimas Linhas
+
+Mostrar as primeiras linhas:
+df.head()
+
+Mostrar as 10 primeiras:
+df.head(10)
+
+Mostrar as últimas linhas:
+df.tail()
+
+Esses comandos ajudam a conferir se os dados foram importados corretamente.
+
+⸻
+
+🧱 2. Estrutura do DataFrame
+
+Dimensões (linhas, colunas):
+df.shape
+
+Nomes das colunas:
+df.columns
+
+Tipos de dados de cada coluna:
+df.dtypes
+
+Quantidade total de elementos:
+df.size
+
+Índices das linhas:
+df.index
+
+🧾 3. Informações Gerais
+
+Resumo completo do DataFrame:
+df.info()
+→ mostra tipos de dados, número de valores não nulos e uso de memória.
+
+Estatísticas descritivas:
+df.describe()
+→ mostra média, desvio padrão, mínimo, máximo, quartis etc.
+
+Para incluir colunas de texto:
+df.describe(include=‘object’)
+
+📊 4. Visualizando Dados Específicos
+
+Selecionar uma coluna:
+df[“coluna”]
+
+Selecionar várias colunas:
+df[[“coluna1”, “coluna2”]]
+
+Selecionar uma linha específica:
+df.loc[0]  → usa o nome do índice
+df.iloc[0] → usa a posição (base 0)
+
+Selecionar fatia de linhas:
+df.iloc[0:5]  → linhas 0 a 4
+
+
+🎯 5. Filtros e Condições
+
+Filtrar linhas por valor:
+df[df[“Idade”] > 30]
+
+Filtrar com duas condições:
+df[(df[“Idade”] > 25) & (df[“Cidade”] == “São Paulo”)]
+
+Usar isin() para múltiplos valores:
+df[df[“Cidade”].isin([“Rio de Janeiro”, “Curitiba”])]
+
+Filtrar texto (contém):
+df[df[“Nome”].str.contains(“a”, case=False)]
+
+🎯 5. Filtros e Condições
+
+Filtrar linhas por valor:
+df[df[“Idade”] > 30]
+
+Filtrar com duas condições:
+df[(df[“Idade”] > 25) & (df[“Cidade”] == “São Paulo”)]
+
+Usar isin() para múltiplos valores:
+df[df[“Cidade”].isin([“Rio de Janeiro”, “Curitiba”])]
+
+Filtrar texto (contém):
+df[df[“Nome”].str.contains(“a”, case=False)]
+
+🧮 6. Estatísticas e Contagens
+
+Média:
+df[“Idade”].mean()
+
+Mediana:
+df[“Idade”].median()
+
+Valor máximo e mínimo:
+df[“Idade”].max(), df[“Idade”].min()
+
+Contar valores únicos:
+df[“Cidade”].value_counts()
+
+Número de valores únicos:
+df[“Cidade”].nunique()
+
+Somar valores:
+df[“Idade”].sum()
+
+
+🧩 7. Ordenação e Organização
+
+Ordenar por uma coluna:
+df.sort_values(“Idade”)
+
+Ordenar em ordem decrescente:
+df.sort_values(“Idade”, ascending=False)
+
+Ordenar por várias colunas:
+df.sort_values([“Cidade”, “Idade”])
+
+🧹 8. Identificar e Tratar Valores Nulos
+
+Ver se há nulos:
+df.isnull().sum()
+
+Remover linhas com nulos:
+df.dropna(inplace=True)
+
+Preencher nulos com valor específico:
+df.fillna(0, inplace=True)
+
+Substituir nulos por média:
+df[“Idade”].fillna(df[“Idade”].mean(), inplace=True)
+
+
+🔁 9. Modificando e Criando Colunas
+
+Criar nova coluna:
+df[“Idade_2x”] = df[“Idade”] * 2
+
+Editar valores de uma coluna:
+df[“Cidade”] = df[“Cidade”].str.upper()
+
+Excluir coluna:
+df.drop(“Idade_2x”, axis=1, inplace=True)
+
+
+🧠 10. Agrupamentos e Resumos
+
+Agrupar e calcular média:
+df.groupby(“Cidade”)[“Idade”].mean()
+
+Contar registros por grupo:
+df.groupby(“Cidade”)[“Nome”].count()
+
+Várias métricas de uma vez:
+df.groupby(“Cidade”).agg({“Idade”: [“mean”, “max”, “min”]})
+
+
+📋 11. Outras Funções Úteis
+
+Ver os 5 maiores valores:
+df.nlargest(5, “Idade”)
+
+Ver os 5 menores valores:
+df.nsmallest(5, “Idade”)
+
+Remover duplicados:
+df.drop_duplicates(inplace=True)
+
+Resetar índice:
+df.reset_index(drop=True, inplace=True)
+
+
+
+
 
 
