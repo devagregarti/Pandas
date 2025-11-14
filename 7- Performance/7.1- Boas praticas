@@ -1,9 +1,0 @@
-Objetivo: Escrever código eficiente e legível.
-
-Evite loops explícitos (for): Prefira operações vetorizadas.
-Use categorical para colunas com poucos valores únicos.
-Evite cópias desnecessárias de DataFrames.
-Use inplace=True com cautela: pode melhorar performance, mas dificulta rastreabilidade.
-
-
-df['categoria'] = df['categoria'].astype('category')

@@ -1,8 +1,0 @@
-Objetivo: Organizar o fluxo de dados para evitar retrabalho.
-
-Tópicos:
-
-Separar etapas: ingestão, limpeza, transformação, análise
-Usar pipelines com funções reutilizáveis
-Documentar cada etapa
-

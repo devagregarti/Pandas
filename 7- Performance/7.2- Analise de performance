@@ -1,9 +1,0 @@
-Objetivo: Medir tempo e consumo de memória.
-
-Ferramentas:
-
-%timeit no Jupyter
-memory_usage()
-df.info() para verificar tipos e memória
-
-df.memory_usage(deep=True)

@@ -1,3 +1,0 @@
-df.to_csv('saida.csv', index=False)      # Salva em CSV
-df.to_excel('saida.xlsx', index=False)   # Salva em Excel
-df.to_json('saida.json')                 # Salva em JSON

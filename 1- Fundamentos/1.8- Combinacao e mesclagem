@@ -1,8 +1,0 @@
-	Concatenar (concat).
-	•	Juntar DataFrames (merge, join).
-	•	pd.concat vs pd.merge.
-
-
-pd.concat([df1, df2])                       # Concatena DataFrames
-pd.merge(df1, df2, on='id')                 # Faz merge (join) por coluna
-pd.merge(df1, df2, how='left', on='id')     # Left join

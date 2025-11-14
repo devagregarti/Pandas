@@ -1,9 +1,0 @@
-Objetivo: Calcular intervalos de tempo.
-
-Tópicos:
-
-Subtração de datas
-.dt.days, .dt.total_seconds()
-
-
-df['dias_passados'] = (pd.Timestamp('2025-10-01') - df.index).days
