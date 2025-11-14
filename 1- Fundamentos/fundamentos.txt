@@ -1,0 +1,60 @@
+Módulo 1 – Fundamentos
+1.	Introdução ao pandas 
+Instalação e configuração
+o	Estrutura básica: Series e DataFrame
+o	Tipos de dados e conversões
+2.	Operações básicas 
+o	Seleção, filtragem e slicing
+o	Métodos principais (head(), info(), describe())
+________________________________________
+Módulo 2 – Trabalhando com dados
+3.	Importação e exportação 
+o	CSV, Excel, JSON, SQL
+o	Leitura de grandes arquivos (chunks)
+4.	Exploração inicial 
+o	Estatísticas descritivas
+o	Tipos de dados e conversão
+o	Detecção de valores nulos
+________________________________________
+Módulo 3 – Manipulação e limpeza
+5.	Manipulação de dados 
+o	Adição/remoção de colunas e linhas
+o	Renomear colunas
+o	Aplicação de funções (apply, map)
+6.	Limpeza de dados 
+o	Tratamento de valores ausentes
+o	Duplicatas
+o	Normalização e padronização
+________________________________________
+Módulo 4 – Estrutura e organização
+7.	Índices e datas 
+o	Índices hierárquicos (MultiIndex)
+o	Trabalhando com datas e períodos
+o	Resampling e time series
+8.	Combinação e mesclagem 
+o	concat, merge, join
+o	Operações relacionais
+________________________________________
+Módulo 5 – Análise e visualização
+9.	Agrupamento e agregação 
+o	groupby, pivot_table
+o	Funções de agregação personalizadas
+10.	Visualização 
+o	Gráficos com pandas
+o	Integração com Matplotlib e Seaborn
+________________________________________
+Módulo 6 – Avançado
+11.	Performance e otimização 
+o	Boas práticas
+o	Uso de categorical
+o	Vetorização vs loops
+12.	Trabalhando com grandes volumes 
+o	Técnicas para big data com pandas
+o	Alternativas: Dask, Polars
+13.	Integração com outras ferramentas 
+o	pandas + NumPy
+o	pandas + SQLAlchemy
+14.	Projetos práticos 
+o	Projeto 1: Análise exploratória de dataset real
+o	Projeto 2: Dashboard simples com pandas + Matplotlib
+
