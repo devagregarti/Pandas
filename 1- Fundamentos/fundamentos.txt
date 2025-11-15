@@ -1,60 +1,177 @@
-Módulo 1 – Fundamentos
-1.	Introdução ao pandas 
-Instalação e configuração
-o	Estrutura básica: Series e DataFrame
-o	Tipos de dados e conversões
-2.	Operações básicas 
-o	Seleção, filtragem e slicing
-o	Métodos principais (head(), info(), describe())
-________________________________________
-Módulo 2 – Trabalhando com dados
-3.	Importação e exportação 
-o	CSV, Excel, JSON, SQL
-o	Leitura de grandes arquivos (chunks)
-4.	Exploração inicial 
-o	Estatísticas descritivas
-o	Tipos de dados e conversão
-o	Detecção de valores nulos
-________________________________________
-Módulo 3 – Manipulação e limpeza
-5.	Manipulação de dados 
-o	Adição/remoção de colunas e linhas
-o	Renomear colunas
-o	Aplicação de funções (apply, map)
-6.	Limpeza de dados 
-o	Tratamento de valores ausentes
-o	Duplicatas
-o	Normalização e padronização
-________________________________________
-Módulo 4 – Estrutura e organização
-7.	Índices e datas 
-o	Índices hierárquicos (MultiIndex)
-o	Trabalhando com datas e períodos
-o	Resampling e time series
-8.	Combinação e mesclagem 
-o	concat, merge, join
-o	Operações relacionais
-________________________________________
-Módulo 5 – Análise e visualização
-9.	Agrupamento e agregação 
-o	groupby, pivot_table
-o	Funções de agregação personalizadas
-10.	Visualização 
-o	Gráficos com pandas
-o	Integração com Matplotlib e Seaborn
-________________________________________
-Módulo 6 – Avançado
-11.	Performance e otimização 
-o	Boas práticas
-o	Uso de categorical
-o	Vetorização vs loops
-12.	Trabalhando com grandes volumes 
-o	Técnicas para big data com pandas
-o	Alternativas: Dask, Polars
-13.	Integração com outras ferramentas 
-o	pandas + NumPy
-o	pandas + SQLAlchemy
-14.	Projetos práticos 
-o	Projeto 1: Análise exploratória de dataset real
-o	Projeto 2: Dashboard simples com pandas + Matplotlib
+# 1 – <u>Fundamentos</u>
 
+## 1.1 Introdução ao pandas
+
+> Instalação e configuração 
+
+> Estrutura básica: Series e DataFrame
+
+> Tipos de dados e conversões
+
+> Criacao de dados dentro
+
+> Seleção de dados por label e posição (loc, Iloc)
+
+> Configuracoes de exibicao
+
+## 1.2 Operações básicas
+
+## 1.3 Seleção, filtragem e slicing
+
+## 1.4 Métodos principais (head(), info(), describe())
+
+________________________________________
+
+# 2 – <u>Trabalhando com dados</u>
+
+## 2.1 Importação e exportação
+
+> CSV, Excel, JSON, SQL
+
+> Parametros na importacao
+
+> Conectando  com  SQL
+
+## 2.2 Leitura de grandes arquivos (chunks)
+
+## 2.3 Exploração inicial
+
+> Entendendo a estrutura dos dados
+
+> Visualizacao inicial
+
+> Diagnostico Inical
+
+> Correlacao basica
+
+________________________________________
+
+# 3 – <u>Manipulação e limpeza</u>
+
+## 3.1 Manipulação de dados
+
+> Ordenacao de dados
+
+> Adição/remoção de colunas e linhas
+
+## 3.2 Limpeza de dados
+
+> Tratamento de valores ausentes
+
+> Tratamento de Duplicatas
+
+> Tratamento de outlier
+
+> Tratamento de valores inconsistentes
+
+> Correcao de tipos
+
+> Padronizacao de strings
+
+> Normalização
+
+________________________________________
+
+# 4 – <u>Estrutura e organização</u>
+
+## 4.1 Indices e datas
+
+> Manipulacao de indices
+
+> Trabalhando com datas e períodos
+
+> Resampling e time series
+
+> Operacoes e janelas
+
+## 4.2 Fuso e convercoes
+
+## 4.3 Combinação e mesclagem
+
+> Tipos de joins
+
+> Juncoes com multiplas chaves
+
+> Colisao de nome (sufixes)
+
+> Concatenacao de  dataframe
+
+> Append (Aparece em legado)
+
+> Combinacao condicional
+
+> Merge ordenado(merge_asof)
+
+> Merge com indice
+
+________________________________________
+
+# 5 – <u>Análise e visualização</u>
+
+## 5.1 Agrupamento e agregação
+
+> Groupby, pivot_table
+
+> Agregacoes multiplas(agg)
+
+> Transformacoes com (transform() e agg())
+
+> Filtragem por grupo(filter)
+
+> Funções de agregação personalizadas
+
+> Estatisticas por grupo
+
+> Cálculos personalizados com apply no groupby
+
+> Pivot, unpivot (melt) e tabelas dinâmicas avançadas
+
+> Rolling e expanding(janelas)
+
+## 5.2 Visualização
+
+> Tipos de graficos
+
+> Gráficos com pandas
+
+> Integração com Matplotlib e Seaborn
+
+> Visualizacao de multiplos graficos
+
+> Ajustes basicos de estilo
+
+> Estilizacao com pandas Styler
+
+________________________________________
+
+# 6 – <u>Avançado</u>
+
+## 6.1 Performance e otimização
+
+> Boas práticas
+
+> Indexacao eficiente
+
+> Uso eficiente de memoria
+
+> Operacoes vetorizadas
+
+> Uso de categorical
+
+> Profiling e monitoramento
+
+> Vetorização vs loops
+
+## 6.2 Trabalhando com grandes volumes
+
+> Leitura em chunks
+
+> Optimizacao de tipos
+
+> Processamento incremental
+
+> Paralelismo
+
+> Técnicas para big data com pandas
+
+> Alternativas: Dask, Polars
